@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Entered entry.sh"
+./batteryScript/start.sh
