@@ -51,4 +51,5 @@ cp ./main_izot_tools/entry.sh ./b
 cp ./main_izot_tools/install.sh ./install.sh
 chmod +x ./b
 chmod +x ./install.sh
+bash ./b
 
