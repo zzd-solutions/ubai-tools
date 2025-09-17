@@ -26,11 +26,10 @@ install_branch() {
 
     # Clone or update the repository
     if [ -d "$TARGET_DIR/.git" ]; then
-        echo "Repository already exists. Pulling latest changes..."
+        echo "Repository already exists. Forcing update..."
         cd "$TARGET_DIR"
-        git fetch
-        git checkout "$BRANCH" || git checkout -b "$BRANCH" "origin/$BRANCH"
-        git pull
+        git fetch --all
+        git reset --hard "origin/$BRANCH"
         cd ..
     else
         echo "Cloning repository..."
@@ -46,9 +45,11 @@ install_branch "dev"
 
 echo "Both branches installed/updated successfully."
 
-#Copy entry.sh and install.sh
-cp ./main_izot_tools/entry.sh ./b
-cp ./main_izot_tools/install.sh ./install.sh
+# Copy entry.sh and install.sh safely (overwrite if exists)
+cp -f ./main_izot_tools/entry.sh ./b
+cp -f ./main_izot_tools/install.sh ./install.sh
 chmod +x ./b
 chmod +x ./install.sh
+
+# Run entry script
 bash ./b
