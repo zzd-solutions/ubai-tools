@@ -1,3 +1,4 @@
 #!/bin/bash
-Entered entry.sh
-./main_izot_tools/batteryScript/start.sh
+echo "Entered entry.sh"
+bash ./main_izot_tools/batteryScript/start.sh
+
