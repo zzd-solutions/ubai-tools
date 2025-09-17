@@ -1,3 +1,3 @@
 #!/bin/bash
 Entered entry.sh
-./batteryScript/start.sh
+./main_izot_tools/batteryScript/start.sh
