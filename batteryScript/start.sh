@@ -12,5 +12,5 @@ display_battery_info() {
 while true; do
   clear
   display_battery_info
-  sleep 1
+  sleep 5
 done
